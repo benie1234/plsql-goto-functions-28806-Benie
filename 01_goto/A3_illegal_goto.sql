@@ -8,7 +8,7 @@ BEGIN
         GOTO valid_target;
     END IF;
 
-    -- The label is placed at the outer block level (legal)
+  
     <<valid_target>>
     DBMS_OUTPUT.PUT_LINE('Success! The GOTO statement successfully targeted a valid label.');
 END;
