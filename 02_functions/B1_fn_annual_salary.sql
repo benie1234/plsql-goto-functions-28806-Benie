@@ -4,19 +4,19 @@ RETURN NUMBER IS
     v_monthly_sal employees.salary%TYPE;
     v_commission employees.commission%TYPE;
 BEGIN
-    -- Fetch salary and commission for the given employee
+    
     SELECT salary, NVL(commission, 0) 
     INTO v_monthly_sal, v_commission
     FROM employees
     WHERE emp_id = p_emp_id;
 
-    -- Calculate annual salary (Monthly salary * 12 + annual commission)
+   
     v_annual_sal := (v_monthly_sal * 12) + v_commission;
     
     RETURN v_annual_sal;
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
-        RETURN NULL; -- Return null if employee ID does not exist
+        RETURN NULL;
 END fn_annual_salary;
 /
 
