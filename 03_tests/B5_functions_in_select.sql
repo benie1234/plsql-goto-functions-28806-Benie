@@ -9,18 +9,17 @@ DECLARE
     v_years           NUMBER(5, 2);
     v_tax             NUMBER(12, 2);
 BEGIN
-    -- Fetch employee basic info
+    
     SELECT first_name || ' ' || last_name, hire_date
     INTO v_emp_name, v_hire_date
     FROM employees
     WHERE emp_id = v_emp_id;
 
-    -- Call our stored functions
+   
     v_annual_sal := fn_annual_salary(v_emp_id);
     v_years := fn_years_of_service(v_hire_date);
     v_tax := fn_calculate_tax(v_annual_sal);
 
-    -- Display the complete employee report
     DBMS_OUTPUT.PUT_LINE('========================================');
     DBMS_OUTPUT.PUT_LINE('       EMPLOYEE ANALYTICS REPORT        ');
     DBMS_OUTPUT.PUT_LINE('========================================');
