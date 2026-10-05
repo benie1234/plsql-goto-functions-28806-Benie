@@ -1,9 +1,9 @@
 DECLARE
-    v_number NUMBER := -5; -- You can change this test value
+    v_number NUMBER := -5;
 BEGIN
     DBMS_OUTPUT.PUT_LINE('Analyzing number cleanly: ' || v_number);
 
-    -- Clean control structure using IF-ELSIF-ELSE
+  
     IF v_number > 0 THEN
         DBMS_OUTPUT.PUT_LINE('Result: The number is Positive.');
     ELSIF v_number < 0 THEN
