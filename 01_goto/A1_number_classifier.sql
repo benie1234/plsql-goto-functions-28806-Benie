@@ -1,7 +1,7 @@
 SET SERVEROUTPUT ON;
 
 DECLARE
-    v_number NUMBER := -5; -- You can change this test value to positive, negative, or zero
+    v_number NUMBER := -5; 
 BEGIN
     DBMS_OUTPUT.PUT_LINE('Analyzing number: ' || v_number);
 
@@ -13,17 +13,17 @@ BEGIN
         GOTO zero_label;
     END IF;
 
-    -- Positive branch
+ 
     <<positive_label>>
     DBMS_OUTPUT.PUT_LINE('Result: The number is Positive.');
     GOTO end_program;
 
-    -- Negative branch
+  
     <<negative_label>>
     DBMS_OUTPUT.PUT_LINE('Result: The number is Negative.');
     GOTO end_program;
 
-    -- Zero branch
+  
     <<zero_label>>
     DBMS_OUTPUT.PUT_LINE('Result: The number is Zero.');
     GOTO end_program;
